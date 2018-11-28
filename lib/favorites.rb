@@ -25,4 +25,8 @@ class Favorite
     @reasons.push(input)
   end
 
+  def delete_reason (id)
+    @reasons.delete_at(id)
+  end
+
 end

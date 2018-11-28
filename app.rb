@@ -5,7 +5,6 @@ require('./lib/favorites')
 require('pry')
 
 get ('/') do
-
   @message = Favorite.list_all_names
   (erb :input)
 end
@@ -36,8 +35,8 @@ post ('/list/:id') do
 end
 
 get ('/list/:id/:delete') do
-  # binding.pry
   item = params[:id].to_i - 1
+  Favorite.give_me(item).delete_reason(params[:delete].to_i)
   @payload = Favorite.give_me(item)
   @message = "get"
   (erb :output)
