@@ -1,0 +1,20 @@
+<h1>Favorite things</h1>
+ <form action="/list" method="post">
+   <div class="form-group">
+     <label for="question">What is favorite?</label>
+     <input id="submission" type="text" name="submission">
+   </div>
+   <button type="submit" class="btn-alert">Add</button>
+ </form>
+
+ <div>
+
+  <ul>
+
+    <% @message.each do |name| %>
+     <li name="<%= name.uid %>"><a href="/list/<%= name.uid %>"> <%= name.name %> </a></li>
+    <% end %>
+
+   </ul>
+
+ </div>

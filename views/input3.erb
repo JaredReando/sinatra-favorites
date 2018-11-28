@@ -1,0 +1,28 @@
+id= <%= @payload.name %>
+
+<form action="/list/<%= @payload.uid %>" method="post">
+  <div class="form-group">
+    <label for="question">Why do you like this?</label>
+    <input id="reason" type="text" name="reason">
+  </div>
+  <button type="submit" class="btn-alert">Add</button>
+</form>
+
+<div>
+
+ <ul>
+
+   <% @payload.reasons.each do |reason| %>
+    <li> <%= reason %> </a></li>
+   <% end %>
+
+  </ul>
+
+</div>
+
+
+
+
+
+
+<a href="/">Go Home</a>
