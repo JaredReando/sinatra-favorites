@@ -11,8 +11,8 @@ class Favorite
     @@db_things[id]
   end
 
-  attr_reader :uid, :name
-  attr_accessor :reasons
+  attr_reader :uid, :name, :reasons
+  # attr_accessor :reasons
 
   def initialize (name)
     @name = name

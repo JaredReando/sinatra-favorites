@@ -18,10 +18,10 @@ post ('/list') do
 end
 
 get ('/list/:id') do
-
   item = params[:id].to_i - 1
   @payload = Favorite.give_me(item)
-  (erb :input3)
+  @message = "get"
+  (erb :output)
 
 end
 
@@ -29,7 +29,17 @@ post ('/list/:id') do
   user_said = params[:reason]
   item = params[:id].to_i - 1
   Favorite.give_me(item).add_reason(user_said)
+  @message = "post"
   @payload = Favorite.give_me(item)
-  (erb :input3)
+  (erb :output)
+
+end
+
+get ('/list/:id/:delete') do
+  # binding.pry
+  item = params[:id].to_i - 1
+  @payload = Favorite.give_me(item)
+  @message = "get"
+  (erb :output)
 
 end

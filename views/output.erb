@@ -1,0 +1,30 @@
+<h2><%= @message %></h2>
+
+<h3><%= @payload.name %></h3>
+
+<form action="/list/<%= @payload.uid %>" method="post">
+  <div class="form-group">
+    <label for="question">Why do you like this?</label>
+    <input id="reason" type="text" name="reason">
+  </div>
+  <button type="submit" class="btn-alert">Add</button>
+</form>
+
+<div>
+
+ <ul>
+
+   <% @payload.reasons.each_with_index do |reason,i| %>
+    <li name="<%= i %>"> <a href="/list/<%= @payload.uid %>/:<%= i %>"> x </a><%= reason %> </a></li>
+   <% end %>
+
+  </ul>
+
+</div>
+
+
+
+
+
+
+<a href="/">Go Home</a>
